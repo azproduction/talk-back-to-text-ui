@@ -26,9 +26,16 @@
     "template"
   ],
   "dependencies": {
+    "css-loader": "^0.14.4",
+    "file-loader": "^0.8.4",
+    "highlight.js": "^8.6.0",
+    "node-libs-browser": "^0.5.2",
     "shower-bright": "^1.0.11",
     "shower-core": "^1.0.7",
-    "shower-ribbon": "^1.0.11"
+    "shower-ribbon": "^1.0.11",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.9.10",
+    "webpack-dev-server": "^1.9.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -39,5 +46,8 @@
     "grunt-gh-pages": "^0.9.1",
     "grunt-text-replace": "^0.3.12",
     "load-grunt-tasks": "^0.6.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline"
   }
 }

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=792, user-scalable=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="stylesheet" href="index.css">
+    <script src="/assets/index.js"></script>
 </head>
 <body class="list">
     <header class="caption">
@@ -17,7 +17,7 @@
 
 
     <section class="slide cover" id="Cover"><div>
-<pre title="Back to Text UI">
+<h1 class="pre-text" title="Back to Text UI">
  ____             _      _
 | __ )  __ _  ___| | __ | |_ ___
 |  _ \ / _` |/ __| |/ / | __/ _ \
@@ -27,21 +27,21 @@
   | |/ _ \ \/ / __| | | | || |
   | |  __/>  <| |_  | |_| || |
   |_|\___/_/\_\\__|  \___/|___|
-</pre>
+</h1>
         <style>
             #Cover {
                 background: #000;
             }
 
-            #Cover pre {
+            #Cover h1 {
                 font-weight: bold;
                 text-shadow: 0 0 20px #fff;
                 transition: transform 0.5s ease;
                 transform: scale(0.5);
             }
 
-            .list #Cover pre,
-            #Cover.active pre {
+            .list #Cover h1,
+            #Cover.active h1 {
                 transform: scale(1);
             }
         </style>
@@ -113,7 +113,7 @@
                 margin-bottom: 30px;
                 padding: 0 30px;
                 margin-left: -30px;
-                background: rgba(0, 0, 0, .5);
+                background: rgba(0, 0, 0, .7);
             }
         </style>
     </div></section>
@@ -244,7 +244,31 @@
         </style>
     </div></section>
 
-    <section class="slide" id="Text-2"><div>
+
+    <section class="slide cover" id="Text-ui"><div>
+        <img src="pictures/dried.png" alt=""/>
+        <p>Text UI of Dired, 1974</p>
+        <style>
+            #Text-ui img {
+                width: 100%;
+            }
+
+            #Text-ui p {
+                color: #fff;
+                text-align: left;
+                font-size: 40px;
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 30px;
+                padding: 0 30px;
+                margin-left: -30px;
+                background: rgba(0, 0, 0, .7);
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide" id="Ascii-art"><div>
         <h2 class="pre-text">And for ASCII Art</h2>
         <pre class="pre-text ascii-art">
                                             ====
@@ -262,16 +286,16 @@
 _|_________________|_______[_]_[_]_[_]____/__][__\__
         </pre>
         <style>
-            #Text-2 {
+            #Ascii-art {
                 background: #000;
             }
 
-            #Text-2 h2 {
+            #Ascii-art h2 {
                 color: #fff;
                 text-shadow: 0 0 10px #fff;
             }
 
-            #Text-2 .ascii-art {
+            #Ascii-art .ascii-art {
                 color: #0c0;
                 text-shadow: 0 0 5px #0c0;
                 font-weight: bold;
@@ -282,27 +306,249 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
         </style>
     </div></section>
 
-    <section class="slide"><div>
-        <h2>Shower Key Features</h2>
+
+    <section class="slide cover" id="First-GUI"><div>
+        <img src="pictures/windows-1.png" alt=""/>
+        <p>Graphic UI, 1985</p>
+        <style>
+            #First-GUI img {
+                height: 100%;
+            }
+
+            #First-GUI p {
+                color: #fff;
+                text-align: left;
+                font-size: 40px;
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 30px;
+                padding: 0 30px;
+                margin-left: -30px;
+                background: rgba(0, 0, 0, .7);
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide cover" id="Gui-BSOD"><div>
+        <img src="pictures/windows-bsod.png" alt=""/>
+        <style>
+            #Gui-BSOD img {
+                height: 100%;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide" id="Terminal-Lovers"><div>
+        <h2>Developers <span class="heart"><3</span> Terminal</h2>
         <ol>
-            <li>Built on HTML, CSS and vanilla JavaScript</li>
-            <li>All modern browsers are supported</li>
-            <li>Slide themes are separated from engine</li>
-            <li>Fully keyboard accessible</li>
-            <li>Printable to PDF</li>
+            <li>Faster to type then click</li>
+            <li class="next">Ability to <b>compose</b> text streams</li>
+            <li class="next">More <b>flexible</b> than GUI</li>
+            <li class="next">Less complicated than equal GUI</li>
         </ol>
-        <p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+        <style>
+            #Terminal-Lovers .heart {
+                color: red;
+            }
+
+            #Terminal-Lovers li {
+                font-size: 35px;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide cover" id="Wget-gui"><div>
+        <img src="pictures/linux_wgetgui.jpg" alt=""/>
+        <p>&gt; wget -qO- file | bsdtar -xvf-</p>
+        <style>
+            #Wget-gui img {
+                width: 100%;
+            }
+
+            #Wget-gui p {
+                font-family: 'Consolas', 'Courier New', monospace;
+                color: #fff;
+                text-align: left;
+                font-size: 40px;
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 30px;
+                padding: 0 30px;
+                margin-left: -30px;
+                background: rgba(0, 0, 0, .7);
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide" id="GUI-won"><div>
+        <h2>GUI</h2>
+        <ol>
+            <li>Text UI – step in GUI evolution
+                <ul>
+                    <li>PC for non-technical users</li>
+                </ul>
+            </li>
+            <li class="next">Browser APIs, WinAPI, GTK, Qt, ...
+                <ul>
+                    <li>Easier to create GUI then TUI now</li>
+                </ul>
+            </li>
+            <li class="next"><i>&laquo;Text UI is for hackers&raquo;</i></li>
+        </ol>
+        <style>
+            #GUI-won li {
+                font-size: 35px;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide" id="TUI-Toolchain"><div>
+        <h2>TUI Now</h2>
+        <ol>
+            <li>Toolchain is not limited
+                <ul>
+                    <li>1-2 good libraries for every language</li>
+                </ul>
+            </li>
+            <li class="next">Imperative style</li>
+            <li class="next">Range of DSV/DSL is a problem </li>
+        </ol>
+        <p class="note">DSV – Domain Specific Vocabulary</p>
+        <style>
+            #TUI-Toolchain li {
+                font-size: 35px;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide" id="Blessed-example"><div>
+        <h2>Blessed.js</h2>
+        <pre class="javascript">
+            <code>var box = blessed.box({</code>
+            <code>  style: {</code>
+            <code>    <mark>fg</mark>: 'white',</code>
+            <code>    <mark>bg</mark>: 'magenta'</code>
+            <code>  },</code>
+            <code>  <mark class="next">border</mark>: {</code>
+            <code>    type: 'line'</code>
+            <code>  },</code>
+            <code>  <mark class="next">tags: true</mark></code>
+            <code>});</code>
+        </pre>
+        <style>
+            #Blessed-example code {
+                line-height: 1.5;
+            }
+
+            #Blessed-example .next {
+                visibility: visible;
+                background: transparent;
+                transition: background 0.5s ease;
+            }
+
+            #Blessed-example .next.active {
+                background: #FAFAA2;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide cover" id="Blessed-demo"><div>
+        <img src="pictures/blessed.gif" alt=""/>
+        <style>
+            #Blessed-demo img {
+                height: 100%;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide" id="Simple-lib"><div>
+        <h2>Simple lib – simple DSV</h2>
+        <pre class="javascript">
+            <code>inquirer.prompt([{</code>
+            <code>  type: 'rawlist',</code>
+            <code>  name: 'tui',</code>
+            <code>  message: 'Are TUIs cool?',</code>
+            <code>  choices: ['Yup', 'Why do you ask?']</code>
+            <code>}], (answers) => {</code>
+            <code>});</code>
+        </pre>
+        <style>
+            #Simple-lib code {
+                line-height: 2;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide cover" id="Inquirer-demo"><div>
+        <img src="pictures/inquirer.png" alt=""/>
+        <style>
+            #Inquirer-demo img {
+                height: 100%;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide" id="Standards"><div>
+        <img src="pictures/standards.png" alt=""/>
+        <style>
+            #Standards div {
+                text-align: center;
+            }
+            #Standards img {
+                width: 100%;
+            }
+        </style>
     </div></section>
 
 
 
+    <section class="slide cover" id="HTML-TUI"><div>
+<h1 class="pre-text" title="HTML TUI">
+ __   __  _______  __   __  ___
+|  | |  ||       ||  |_|  ||   |
+|  |_|  ||_     _||       ||   |
+|       |  |   |  |       ||   |
+|       |  |   |  |       ||   |___
+|   _   |  |   |  | ||_|| ||       |
+|__| |__|  |___|  |_|   |_||_______|
+      _______  __   __  ___
+     |       ||  | |  ||   |
+     |_     _||  | |  ||   |
+       |   |  |  |_|  ||   |
+       |   |  |       ||   |
+       |   |  |       ||   |
+       |___|  |_______||___|
+</h1>
+        <style>
+            #HTML-TUI {
+                background: #000;
+            }
 
+            #HTML-TUI h1 {
+                position: absolute;
+                top: -20px;
+                font-weight: bold;
+                text-shadow: 0 0 20px #fff;
+                transition: transform 0.5s ease;
+                transform: scale(0.5);
+            }
 
-
-
-
-
-
+            .list #HTML-TUI h1,
+            #HTML-TUI.active h1 {
+                transform: scale(1);
+            }
+        </style>
+    </div></section>
 
 
 
@@ -418,11 +664,6 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
     <section class="slide cover" id="Picture"><div>
         <h2>Pictures</h2>
         <img src="pictures/picture.jpg" alt="">
-        <style>
-            #Picture h2 {
-                color:#FFF;
-                }
-        </style>
     </div></section>
     <section class="slide shout"><div>
         <h2>You can even shout this way</h2>
@@ -453,10 +694,6 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
         </style>
     </div></section>
     <p class="badge"><a href="https://github.com/azproduction/talk-back-to-text-ui">Fork me on Github</a></p>
-    <!--
-        To hide progress bar from entire presentation
-        just remove “progress” element.
-        -->
     <div class="progress"><div></div></div>
     <script src="node_modules/shower-core/shower.min.js"></script>
 </body>

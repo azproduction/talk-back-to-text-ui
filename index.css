@@ -7,8 +7,7 @@
     color: #999;
 }
 
-.slide .pre-text,
-.slide pre {
+.slide .pre-text {
     white-space: pre;
     line-height: 1;
     font-family: 'Consolas', 'Courier New', monospace;
