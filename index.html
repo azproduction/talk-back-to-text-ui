@@ -830,7 +830,7 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
             #Transformation-result .guide {
                 opacity: 0.5;
                 width: 757px;
-                height: 420px;
+                height: 418px;
                 position: absolute;
                 top: 153px;
                 left: 134px;
@@ -844,7 +844,159 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
     </div></section>
 
 
+    <section class="slide cover" id="Transformation-result-3d"><div>
+        <h1 class="pre-text">
+<div class="box background"><span class="line">         </span>
+<span class="line">         </span>
+<span class="line">         </span></div>
+<div class="box border"><span class="line">┌-------┐</span>
+<span class="line">|       |</span>
+<span class="line">└-------┘</span></div>
+<div class="box text"><span class="line">         </span>
+<span class="line"> Content </span>
+<span class="line">         </span></div>
+        </h1>
+        <style>
+            #Transformation-result-3d h1 {
+                perspective: 1000px;
+                transform: translateY(-230px) translateX(-50px);
+            }
 
+            #Transformation-result-3d .box {
+                position: absolute;
+                left: 134px;
+                font-size: 140px;
+                top: 153px;
+                background: rgba(255, 255, 255, 0.2);
+                transition: transform .5s cubic-bezier(0.64, 0.57, 0.67, 1.53);
+                transform: none;
+            }
+
+            .list #Transformation-result-3d .background,
+            #Transformation-result-3d .background {
+                background: blue;
+            }
+
+            .list #Transformation-result-3d .border,
+            #Transformation-result-3d.active .border {
+                transform: rotateY(35deg);
+            }
+
+            .list #Transformation-result-3d .background,
+            #Transformation-result-3d.active .background {
+                transform: rotateY(35deg) translateZ(-150px);
+            }
+
+            .list #Transformation-result-3d .text,
+            #Transformation-result-3d.active .text {
+                transform: rotateY(35deg) translateZ(150px);
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide" id="Forwarding-events"><div>
+        <h2>Forwarding Input events</h2>
+        <ol>
+            <li>Read from <code>STDIN</code></li>
+            <li>Serialize Event</li>
+            <li>Transmit to Browser</li>
+            <li>Replay on <code>DOM</code></li>
+            <li><code>GOTO 1</code></li>
+        </ol>
+        <style>
+            #Forwarding-events li {
+                font-size: 35px;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide" id="Repainting"><div>
+        <h2>Repainting</h2>
+        <ol>
+            <li><code>requestAnimationFrame()</code>
+                <ul>
+                    <li>CPU burning</li>
+                </ul>
+            </li>
+            <li class="next">Modify React <code>BatchingStrategy</code>
+                <ul>
+                    <li>Precise repaints</li>
+                    <li>Requres <code>onWheel</code> event hack</li>
+                </ul>
+            </li>
+        </ol>
+        <style>
+            #Repainting li {
+                font-size: 35px;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide" id="React-BatchingStrategy"><div>
+        <h2>React BatchingStrategy</h2>
+        <pre class="javascript">
+            <code>import ReactUpdates from 'react/lib/ReactUpdates';</code>
+        </pre>
+        <pre class="javascript next second">
+            <code>let hasDomChanges = false;</code>
+            <code>ReactUpdates.injection.injectBatchingStrategy({</code>
+            <code>    isBatchingUpdates: true,</code>
+            <code>    batchedUpdates: (callback, ...args) => {</code>
+            <code>        hasDomChanges = <mark>true</mark>;</code>
+            <code>        ReactUpdates.<mark>flushBatchedUpdates();</mark></code>
+            <code>        callback(...args);</code>
+            <code>    }</code>
+            <code>});</code>
+        </pre>
+        <pre class="javascript next third">
+            <code>requestAnimationFrame(<mark>tryToRepaint</mark>);</code>
+        </pre>
+        <style>
+            #React-BatchingStrategy code {
+                line-height: 1.4;
+            }
+
+            #React-BatchingStrategy pre {
+                margin: 0;
+            }
+
+            #React-BatchingStrategy.slide pre code:only-child:before {
+                content: counter(code,decimal-leading-zero)'.';
+            }
+
+            #React-BatchingStrategy .second {
+                counter-reset: code 1;
+            }
+
+            #React-BatchingStrategy .third {
+                counter-reset: code 10;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide cover" id="Flux-Schema"><div>
+        <h2>
+            <img src="pictures/html-tui-schema.png" alt=""/>
+        </h2>
+        <style>
+            #Flux-Schema {
+                background: #fff;
+            }
+            #Flux-Schema img {
+                margin-top: 25px;
+                width: 100%;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide shout"><div>
+        <h2>Show time!</h2>
+    </div></section>
 
 
 
