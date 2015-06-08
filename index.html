@@ -199,9 +199,8 @@
 
 
     <section class="slide" id="Text"><div>
-        <h2 class="pre-text">Symbols were used to</h2>
         <ol>
-            <li class="pre-text">Render texts<span class="cursor"></span></li>
+            <li class="pre-text render-texts">Render texts<span class="cursor"></span></li>
             <li class="pre-text text-ui next">┌--------------┐
 | Draw Text UI |
 └--------------┘</li>
@@ -225,15 +224,20 @@
                 font-size: 50px;
                 color: #0c0;
                 text-shadow: 0 0 5px #0c0;
-                margin-bottom: 20px;
+                margin-bottom: 40px;
             }
 
             #Text .text-ui {
                 background: blue;
                 display: inline-block;
+                font-size: 70px;
                 color: #fff;
                 text-shadow: 0 0 10px #fff;
                 box-shadow: 0 0 10px blue;
+            }
+
+            #Text .render-texts {
+                font-size: 70px;
             }
 
             #Text .cursor:after {
@@ -269,7 +273,7 @@
 
 
     <section class="slide" id="Ascii-art"><div>
-        <h2 class="pre-text">And for ASCII Art</h2>
+        <h2 class="pre-text">...and for ASCII Art</h2>
         <pre class="pre-text ascii-art">
                                             ====
                                             o o~~
@@ -291,8 +295,8 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
             }
 
             #Ascii-art h2 {
-                color: #fff;
-                text-shadow: 0 0 10px #fff;
+                color: #0c0;
+                text-shadow: 0 0 10px #0c0;
             }
 
             #Ascii-art .ascii-art {
@@ -302,39 +306,6 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
                 font-size: 30px;
                 position: absolute;
                 left: 40px;
-            }
-        </style>
-    </div></section>
-
-
-    <section class="slide cover" id="First-GUI"><div>
-        <img src="pictures/windows-1.png" alt=""/>
-        <p>Graphic UI, 1985</p>
-        <style>
-            #First-GUI img {
-                height: 100%;
-            }
-
-            #First-GUI p {
-                color: #fff;
-                text-align: left;
-                font-size: 40px;
-                position: absolute;
-                bottom: 0;
-                margin-bottom: 30px;
-                padding: 0 30px;
-                margin-left: -30px;
-                background: rgba(0, 0, 0, .7);
-            }
-        </style>
-    </div></section>
-
-
-    <section class="slide cover" id="Gui-BSOD"><div>
-        <img src="pictures/windows-bsod.png" alt=""/>
-        <style>
-            #Gui-BSOD img {
-                height: 100%;
             }
         </style>
     </div></section>
@@ -384,12 +355,68 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
     </div></section>
 
 
+    <section class="slide cover" id="First-GUI"><div>
+        <img src="pictures/windows-1.png" alt=""/>
+        <p>Graphic UI, 1985</p>
+        <style>
+            #First-GUI img {
+                height: 100%;
+            }
+
+            #First-GUI p {
+                color: #fff;
+                text-align: left;
+                font-size: 40px;
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 30px;
+                padding: 0 30px;
+                margin-left: -30px;
+                background: rgba(0, 0, 0, .7);
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide cover" id="Windows-Art"><div>
+        <img src="pictures/glitch.jpg" alt=""/>
+        <p>Window Art</p>
+        <style>
+            #Windows-Art img {
+                height: 100%;
+            }
+
+            #Windows-Art p {
+                color: #fff;
+                text-align: left;
+                font-size: 40px;
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 30px;
+                padding: 0 30px;
+                margin-left: -30px;
+                background: rgba(0, 0, 0, .7);
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide cover" id="Gui-BSOD"><div>
+        <img src="pictures/windows-bsod.png" alt=""/>
+        <style>
+            #Gui-BSOD img {
+                height: 100%;
+            }
+        </style>
+    </div></section>
+
+
     <section class="slide" id="GUI-won"><div>
         <h2>GUI</h2>
         <ol>
             <li>Text UI – step in GUI evolution
                 <ul>
-                    <li>PC for non-technical users</li>
+                    <li>PC for <b>non-technical</b> users</li>
                 </ul>
             </li>
             <li class="next">Browser APIs, WinAPI, GTK, Qt, ...
@@ -408,7 +435,7 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
 
 
     <section class="slide" id="TUI-Toolchain"><div>
-        <h2>TUI Now</h2>
+        <h2>Post GUI Text UI</h2>
         <ol>
             <li>Toolchain is not limited
                 <ul>
@@ -435,10 +462,10 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
             <code>    <mark>fg</mark>: 'white',</code>
             <code>    <mark>bg</mark>: 'magenta'</code>
             <code>  },</code>
-            <code>  <mark class="next">border</mark>: {</code>
+            <code>  <mark>border</mark>: {</code>
             <code>    type: 'line'</code>
             <code>  },</code>
-            <code>  <mark class="next">tags: true</mark></code>
+            <code>  <mark>tags: true</mark></code>
             <code>});</code>
         </pre>
         <style>
@@ -602,9 +629,9 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
 
 
     <section class="slide cover" id="DOM-To-TUI-result"><div>
-        <h1 class="pre-text"><span class="content"><span class="border">┌---------┐</span>
-<span class="border">|</span> Content <span class="border">|</span>
-<span class="border">└---------┘</span></span></h1>
+        <h1 class="pre-text"><span class="content">┌---------┐</span>
+<span class="content">| Content<span class="cursor"></span>|</span>
+<span class="content">└---------┘</span></h1>
         <style>
             #DOM-To-TUI-result {
                 background: #000;
@@ -614,11 +641,6 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
                 margin-top: 20px;
                 font-size: 120px;
                 font-weight: normal;
-                transition: opacity .5s;
-                opacity: 0;
-            }
-            #DOM-To-TUI-result .border {
-                color: #fff;
             }
 
             #DOM-To-TUI-result .content {
@@ -626,9 +648,11 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
                 color: #fff;
             }
 
-            .list #DOM-To-TUI-result h1,
-            #DOM-To-TUI-result.active h1 {
-                opacity: 1;
+            #DOM-To-TUI-result .cursor:after {
+                content: '█';
+                color: #fff;
+                animation: blink 1s steps(10, start) infinite;
+                -webkit-animation: blink 1s steps(10, start) infinite;
             }
         </style>
     </div></section>
@@ -698,17 +722,164 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
     </div></section>
 
 
+    <section class="slide" id="JSX-code"><div>
+        <pre class="html">
+            <code>&lt;div className="mc"&gt;</code>
+            <code>    &lt;ul className="menu"&gt;</code>
+            <code>        &lt;li className="menu__item"&gt;&lt;span className="menu__item-shortcut"&gt;L&lt;/span&gt;eft&lt;/li&gt;</code>
+            <code>        &lt;li className="menu__item"&gt;&lt;span className="menu__item-shortcut"&gt;F&lt;/span&gt;ile&lt;/li&gt;</code>
+            <code>        &lt;li className="menu__item"&gt;&lt;span className="menu__item-shortcut"&gt;C&lt;/span&gt;ommand&lt;/li&gt;</code>
+            <code>        &lt;li className="menu__item"&gt;&lt;span className="menu__item-shortcut"&gt;O&lt;/span&gt;ptions&lt;/li&gt;</code>
+            <code>        &lt;li className="menu__item"&gt;&lt;span className="menu__item-shortcut"&gt;R&lt;/span&gt;ight&lt;/li&gt;</code>
+            <code>    &lt;/ul&gt;</code>
+            <code>    &lt;div className="content"&gt;</code>
+            <code>        {this.props.leftPanel ? this._renderPanel(this.props.leftPanel.toJS()) : null}</code>
+            <code>        {this.props.rightPanel ? this._renderPanel(this.props.rightPanel.toJS()) : null}</code>
+            <code>    &lt;/div&gt;</code>
+            <code>    &lt;div className="console"&gt;</code>
+            <code>        &lt;input className="console__input" type="text" defaultValue="~/Documents/html-cli$ node index.js" autofocus /&gt;</code>
+            <code>    &lt;/div&gt;</code>
+            <code>    &lt;ul className="controls"&gt;</code>
+            <code>        &lt;li className="control"&gt;</code>
+            <code>            &lt;div className="control__number"&gt;1&lt;/div&gt;</code>
+            <code>            &lt;div className="control__name"&gt;Help&lt;/div&gt;</code>
+            <code>        &lt;/li&gt;</code>
+            <code>        &lt;li className="control"&gt;</code>
+            <code>            &lt;div className="control__number"&gt;2&lt;/div&gt;</code>
+            <code>            &lt;div className="control__name"&gt;Menu&lt;/div&gt;</code>
+            <code>        &lt;/li&gt;</code>
+            <code>        &lt;li className="control"&gt;</code>
+            <code>            &lt;div className="control__number"&gt;3&lt;/div&gt;</code>
+            <code>            &lt;div className="control__name"&gt;View&lt;/div&gt;</code>
+            <code>        &lt;/li&gt;</code>
+            <code>        &lt;li className="control"&gt;</code>
+            <code>            &lt;div className="control__number"&gt;4&lt;/div&gt;</code>
+            <code>            &lt;div className="control__name"&gt;Edit&lt;/div&gt;</code>
+            <code>        &lt;/li&gt;</code>
+            <code>        &lt;li className="control"&gt;</code>
+            <code>            &lt;div className="control__number"&gt;5&lt;/div&gt;</code>
+            <code>            &lt;div className="control__name"&gt;Copy&lt;/div&gt;</code>
+            <code>        &lt;/li&gt;</code>
+            <code>        &lt;li className="control"&gt;</code>
+            <code>            &lt;div className="control__number"&gt;6&lt;/div&gt;</code>
+            <code>            &lt;div className="control__name"&gt;RenMov&lt;/div&gt;</code>
+            <code>        &lt;/li&gt;</code>
+            <code>        &lt;li className="control"&gt;</code>
+            <code>            &lt;div className="control__number"&gt;7&lt;/div&gt;</code>
+            <code>            &lt;div className="control__name"&gt;Mkdir&lt;/div&gt;</code>
+            <code>        &lt;/li&gt;</code>
+            <code>        &lt;li className="control"&gt;</code>
+            <code>            &lt;div className="control__number"&gt;8&lt;/div&gt;</code>
+            <code>            &lt;div className="control__name"&gt;Delete&lt;/div&gt;</code>
+            <code>        &lt;/li&gt;</code>
+            <code>        &lt;li className="control"&gt;</code>
+            <code>            &lt;div className="control__number"&gt;9&lt;/div&gt;</code>
+            <code>            &lt;div className="control__name"&gt;PullDn&lt;/div&gt;</code>
+            <code>        &lt;/li&gt;</code>
+            <code>        &lt;li className="control"&gt;</code>
+            <code>            &lt;div className="control__number"&gt;10&lt;/div&gt;</code>
+            <code>            &lt;div className="control__name"&gt;Quit&lt;/div&gt;</code>
+            <code>        &lt;/li&gt;</code>
+            <code>    &lt;/ul&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+        <style>
+            #JSX-code {
+                background: #000;
+            }
+            #JSX-code pre {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+            }
+            #JSX-code code {
+                overflow: hidden;
+                background: #000;
+                color: #fff;
+                line-height: 1;
+            }
+
+            #JSX-code .hljs-tag {
+                background: transparent;
+            }
+
+            #JSX-code .hljs-title {
+                color: #7BB1E7;
+            }
+
+            #JSX-code .hljs-value {
+                color: rgb(124, 221, 124);
+            }
+
+            #JSX-code .hljs-attribute {
+                color: #B3DBFD;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide cover" id="Node-mc"><div>
+        <img src="pictures/node-mc.png" alt=""/>
+        <p>React Midnight Commander</p>
+        <style>
+            #Node-mc img {
+                width: 100%;
+            }
+
+            #Node-mc p {
+                color: #fff;
+                text-align: left;
+                font-size: 40px;
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 30px;
+                padding: 0 30px;
+                margin-left: -30px;
+                background: rgba(0, 0, 0, .7);
+            }
+        </style>
+    </div></section>
+
+
     <section class="slide" id="Borrow-from-DOM"><div>
         <h2>Borrow from DOM API/CSSOM</h2>
         <ul>
             <li><code>elem.getClientRects()</code> &mdash; Layout Math</li>
-            <li class="next"><code>elem.getComputedStyle()</code> &mdash; Styles</li>
+            <li class="next"><code>getComputedStyle(elem)</code> &mdash; Styles</li>
             <li class="next">DOM Event system</li>
             <li class="next">Document Structure</li>
         </ul>
         <style>
             #Borrow-from-DOM li {
                 font-size: 35px;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide cover" id="Transformation-code"><div>
+        <h1 class="pre-text">
+&lt;<span class="tag">div</span> <span class="attribute">style=</span><span class="value">"..."</span>&gt;
+  Content
+&lt;/<span class="tag">div</span>&gt;
+        </h1>
+        <style>
+            #Transformation-code h1 {
+                line-height: 1;
+                font-size: 80px;
+            }
+
+            #Transformation-code .tag {
+                color: #7BB1E7;
+                font-weight: bold;
+            }
+            #Transformation-code .value {
+                color: rgb(124, 221, 124);
+            }
+            #Transformation-code .attribute {
+                color: #B3DBFD;
             }
         </style>
     </div></section>
@@ -769,7 +940,23 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
     </div></section>
 
 
-    <section class="slide cover" id="Transformation-result"><div>
+    <section class="slide" id="Transformation-in-the-nutshell-1"><div>
+        <h2>Translating &lt;div&gt; to TUI</h2>
+        <pre class="javascript">
+            <code>let styles = window.getComputedStyle(div);</code>
+            <code>let rect = div.getClientRects();</code>
+            <code>let box = <mark>renderBox</mark>(rect, styles);</code>
+        </pre>
+        <style>
+            #Transformation-in-the-nutshell-1 code {
+                line-height: 2;
+                font-size: 30px;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide cover" id="Transformation-result-1"><div>
         <h1 class="pre-text">
             <div class="width-ruler">9 Symbols</div>
             <div class="height-ruler">3s</div>
@@ -780,16 +967,13 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
 <div class="box next"><span class="line">┌-------┐</span>
 <span class="line">|       |</span>
 <span class="line">└-------┘</span></div>
-<div class="box next"><span class="line">         </span>
-<span class="line"> Content </span>
-<span class="line">         </span></div>
         </h1>
         <style>
-            #Transformation-result h1 {
+            #Transformation-result-1 h1 {
 
             }
 
-            #Transformation-result .box {
+            #Transformation-result-1 .box {
                 position: absolute;
                 left: 134px;
                 font-size: 140px;
@@ -797,37 +981,35 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
 
                 transition: all .5s;
                 transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.0);
-                transform: scale(0);
                 opacity: 0;
             }
 
-            #Transformation-result .background {
+            #Transformation-result-1 .background {
                 background: blue;
             }
 
-            #Transformation-result .width-ruler {
+            #Transformation-result-1 .width-ruler {
                 position: absolute;
-                top: 50px;
+                top: 70px;
                 left: 0;
                 width: 100%;
                 text-align: center;
                 font-size: 60px;
             }
 
-            #Transformation-result .height-ruler {
+            #Transformation-result-1 .height-ruler {
                 position: absolute;
                 font-size: 60px;
-                right: 0;
+                right: 30px;
                 top: 330px;
             }
 
-            .list #Transformation-result .box,
-            #Transformation-result .box.active {
+            .list #Transformation-result-1 .box,
+            #Transformation-result-1 .box.active {
                 opacity: 1;
-                transform: scale(1);
             }
 
-            #Transformation-result .guide {
+            #Transformation-result-1 .guide {
                 opacity: 0.5;
                 width: 757px;
                 height: 418px;
@@ -837,6 +1019,99 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
                 background-color: #fff;
                 background-image: linear-gradient(59deg, black 25%, transparent 25%, transparent 75%, black 75%, black),
                                   linear-gradient(59deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+                background-size: 170px 280px;
+                background-position: 0 0, 85px 140px;
+            }
+        </style>
+    </div></section>
+
+    <section class="slide" id="Transformation-in-the-nutshell-2"><div>
+        <h2>Translating textNode to TUI</h2>
+        <pre class="javascript">
+            <code>let styles = window.getComputedStyle(div);</code>
+            <code>let text = div.firstChild;</code>
+            <code>let range = document.createRange();</code>
+            <code>            range.selectNodeContents(text);</code>
+            <code>let rect = range.getClientRects();</code>
+            <code>let textBox = <mark>renderText</mark>(rect, styles);</code>
+        </pre>
+        <style>
+            #Transformation-in-the-nutshell-2 code {
+                line-height: 2;
+                font-size: 29px;
+            }
+        </style>
+    </div></section>
+
+    <section class="slide cover" id="Transformation-result-2"><div>
+        <h1 class="pre-text">
+            <div class="width-ruler">9 Symbols</div>
+            <div class="height-ruler">3s</div>
+            <div class="guide"></div>
+<div class="box background"><span class="line">         </span>
+<span class="line">         </span>
+<span class="line">         </span></div>
+<div class="box"><span class="line">┌-------┐</span>
+<span class="line">|       |</span>
+<span class="line">└-------┘</span></div>
+<div class="box text-content next"><span class="line">         </span>
+<span class="line"> Content </span>
+<span class="line">         </span></div>
+        </h1>
+        <style>
+            #Transformation-result-2 h1 {
+
+            }
+
+            #Transformation-result-2 .box {
+                position: absolute;
+                left: 134px;
+                font-size: 140px;
+                top: 153px;
+
+                transition: all .5s;
+                transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.0);
+            }
+
+            #Transformation-result-2 .background {
+                background: blue;
+            }
+
+            #Transformation-result-2 .width-ruler {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                font-size: 60px;
+            }
+
+            #Transformation-result-2 .height-ruler {
+                position: absolute;
+                font-size: 60px;
+                right: 30px;
+                top: 330px;
+            }
+
+            #Transformation-result-2 .text-content {
+                opacity: 0;
+            }
+
+            .list #Transformation-result-2 .text-content,
+            #Transformation-result-2 .text-content.active {
+                opacity: 1;
+            }
+
+            #Transformation-result-2 .guide {
+                opacity: 0.5;
+                width: 757px;
+                height: 418px;
+                position: absolute;
+                top: 153px;
+                left: 134px;
+                background-color: #fff;
+                background-image: linear-gradient(59deg, black 25%, transparent 25%, transparent 75%, black 75%, black),
+                linear-gradient(59deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
                 background-size: 170px 280px;
                 background-position: 0 0, 85px 140px;
             }
@@ -895,6 +1170,45 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
     </div></section>
 
 
+    <section class="slide shout" id="STDOUT"><div>
+        <h2>DOM<span class="arrow">&rarr;</span>STDOUT</h2>
+        <style>
+            #STDOUT {
+                background: #000;
+            }
+
+            #STDOUT h2 {
+                color: #eee;
+            }
+
+            #STDOUT .arrow {
+                color: #7BB1E7;
+                animation: blink 1s steps(10, start) infinite;
+                -webkit-animation: blink 1s steps(10, start) infinite;
+            }
+        </style>
+    </div></section>
+
+    <section class="slide shout" id="STDIN"><div>
+        <h2>STDIN<span class="arrow">&rarr;</span>DOM</h2>
+        <style>
+            #STDIN {
+                background: #000;
+            }
+
+            #STDIN h2 {
+                color: #eee;
+            }
+
+            #STDIN .arrow {
+                color: rgb(124, 221, 124);
+                animation: blink 1s steps(10, start) infinite;
+                -webkit-animation: blink 1s steps(10, start) infinite;
+            }
+        </style>
+    </div></section>
+
+
     <section class="slide" id="Forwarding-events"><div>
         <h2>Forwarding Input events</h2>
         <ol>
@@ -907,6 +1221,21 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
         <style>
             #Forwarding-events li {
                 font-size: 35px;
+            }
+        </style>
+    </div></section>
+
+
+    <section class="slide shout" id="Repainting-loop"><div>
+        <h2>
+            <svg width="300" height="300" viewBox="0 0 938 1000" xmlns="http://www.w3.org/2000/svg">
+                <path d="M702.5 239.75q96.25 0 165.625 76.25t69.375 183.75 -76.25 183.75 -183.75 76.25q-21.25 0 -36.875 -15t-15.625 -36.25 15.625 -36.875 36.875 -15.625q65 0 110.625 -45.625t45.625 -110.625 -38.75 -110.625 -92.5 -45.625l-107.5 0l66.25 67.5q15 15 15 36.875t-15 36.875 -36.25 15 -36.25 -15l-193.75 -193.75 193.75 -192.5q15 -15 36.25 -15t36.25 15 15 36.875 -15 36.875l-66.25 67.5l107.5 0zm-426.25 275q15 -15 36.25 -15t36.25 15l193.75 193.75 -193.75 192.5q-15 15 -36.25 15t-36.25 -15 -15 -36.875 15 -36.875l66.25 -67.5l-107.5 0q-96.25 0 -165.625 -76.25t-69.375 -183.75 76.25 -183.75 183.75 -76.25q21.25 0 36.875 15t15.625 36.25 -15.625 36.875 -36.875 15.625q-65 0 -110.625 45.625t-45.625 110.625 38.75 110.625 92.5 45.625l107.5 0l-66.25 -67.5q-15 -15 -15 -36.875t15 -36.875z"/>
+            </svg>
+        </h2>
+        <style>
+            #Repainting-loop {
+                background: #fff;
+                text-align: center;
             }
         </style>
     </div></section>
@@ -946,17 +1275,13 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
             <code>    isBatchingUpdates: true,</code>
             <code>    batchedUpdates: (callback, ...args) => {</code>
             <code>        hasDomChanges = <mark>true</mark>;</code>
-            <code>        ReactUpdates.<mark>flushBatchedUpdates();</mark></code>
             <code>        callback(...args);</code>
             <code>    }</code>
             <code>});</code>
         </pre>
-        <pre class="javascript next third">
-            <code>requestAnimationFrame(<mark>tryToRepaint</mark>);</code>
-        </pre>
         <style>
             #React-BatchingStrategy code {
-                line-height: 1.4;
+                line-height: 1.6;
             }
 
             #React-BatchingStrategy pre {
@@ -970,25 +1295,66 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
             #React-BatchingStrategy .second {
                 counter-reset: code 1;
             }
+        </style>
+    </div></section>
 
-            #React-BatchingStrategy .third {
-                counter-reset: code 10;
+
+    <section class="slide" id="React-BatchingStrategy-2"><div>
+        <h2>React BatchingStrategy</h2>
+        <pre class="javascript">
+            <code>requestAnimationFrame(function tryRepaint() {</code>
+            <code>    ReactUpdates.<mark>flushBatchedUpdates();</mark></code>
+            <code>    if (hasDomChanges) {</code>
+            <code>        repaint();</code>
+            <code>    }</code>
+            <code>    requestAnimationFrame(tryRepaint);</code>
+            <code>});</code>
+        </pre>
+        <style>
+            #React-BatchingStrategy-2 code {
+                line-height: 1.6;
+                font-size: 28px;
+            }
+
+            #React-BatchingStrategy-2 pre {
+                margin: 0;
             }
         </style>
     </div></section>
 
 
-    <section class="slide cover" id="Flux-Schema"><div>
-        <h2>
-            <img src="pictures/html-tui-schema.png" alt=""/>
-        </h2>
+    <section class="slide" id="All-in-all"><div>
+        <h2>Full Application Cycle</h2>
+        <ol>
+            <li>Measure <code>DOM</code> & generate Text UI</li>
+            <li class="next">Render Text UI to <code>STDOUT</code></li>
+            <li class="next">Receive <code>STDIN</code> Events</li>
+            <li class="next">Replay Events on <code>DOM</code></li>
+            <li class="next"><code>GOTO 1</code></li>
+        </ol>
         <style>
-            #Flux-Schema {
-                background: #fff;
+            #All-in-all li {
+                font-size: 35px;
             }
-            #Flux-Schema img {
-                margin-top: 25px;
-                width: 100%;
+        </style>
+    </div></section>
+
+
+    <section class="slide" id="Back-to-Text-UI"><div>
+        <h2>Back to Text UI</h2>
+        <ol>
+            <li>Developers <span class="heart"><3</span> Terminal</li>
+            <li class="next">Toolchain is not limited</li>
+            <li class="next">Use Web Tools to render <code>TUI</code></li>
+            <li class="next">Declarative <code>TUI</code> with React!</li>
+        </ol>
+        <style>
+            #Back-to-Text-UI li {
+                font-size: 35px;
+            }
+
+            #Back-to-Text-UI .heart {
+                color: red;
             }
         </style>
     </div></section>
@@ -999,137 +1365,12 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
     </div></section>
 
 
-
-
-
-
-
-
-
-
-
-    <!-- -->
-    <!-- -->
-    <!-- -->
-    <!-- -->
-
-    <section class="slide"><div>
-        <h2>Shower Key Features</h2>
-        <ol>
-            <li>Built on HTML, CSS and vanilla JavaScript</li>
-            <li>All modern browsers are supported</li>
-            <li>Slide themes are separated from engine</li>
-            <li>Fully keyboard accessible</li>
-            <li>Printable to PDF</li>
-        </ol>
-        <p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
-    </div></section>
-    <section class="slide"><div>
-        <h2>Plain Text on Your Slides</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-    </div></section>
-    <section class="slide"><div>
-        <h2>All Kind of Lists</h2>
-        <ol>
-            <li>Simple lists are marked with bullets</li>
-            <li>Ordered lists begin with a number</li>
-            <li>You can even nest lists one inside another
-                <ul>
-                    <li>Or mix their types</li>
-                    <li>But do not go too far</li>
-                    <li>Otherwise audience will be bored</li>
-                </ul>
-            </li>
-            <li>Look, seven rows exactly!</li>
-        </ol>
-    </div></section>
-    <section class="slide"><div>
-        <h2>Serious Citations</h2>
-        <figure>
-            <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-            </blockquote>
-            <figcaption>Marcus Tullius Cicero</figcaption>
-        </figure>
-    </div></section>
-    <section class="slide"><div>
-        <h2>Code Samples</h2>
-        <pre>
-            <code>&lt;!DOCTYPE html&gt;</code>
-            <code>&lt;html lang="en"&gt;</code>
-            <code><mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark></code>
-            <code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-            <code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-            <code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-            <code><mark>&lt;/head&gt;</mark></code>
-        </pre>
-    </div></section>
-    <section class="slide"><div>
-        <h2>Even Tables</h2>
-        <table>
-        <tr>
-            <th scope="col">Locavore</th>
-            <th>Umami</th>
-            <th>Helvetica</th>
-            <th>Vegan</th>
-        </tr>
-        <tr>
-            <th scope="row">Fingerstache</th>
-            <td>Kale</td>
-            <td>Chips</td>
-            <td>Keytar</td>
-        </tr>
-        <tr>
-            <th scope="row">Sriracha</th>
-            <td>Gluten-free</td>
-            <td>Ennui</td>
-            <td>Keffiyeh</td>
-        </tr>
-        <tr>
-            <th scope="row">Thundercats</th>
-            <td>Jean</td>
-            <td>Shorts</td>
-            <td>Biodiesel</td>
-        </tr>
-        <tr>
-            <th scope="row">Terry</th>
-            <td>Richardson</td>
-            <td>Swag</td>
-            <td>Blog</td>
-        </tr>
-        </table>
-        <p>It’s good to have information organized.</p>
-    </div></section>
-    <section class="slide cover" id="Picture"><div>
-        <h2>Pictures</h2>
-        <img src="pictures/picture.jpg" alt="">
-    </div></section>
-    <section class="slide shout"><div>
-        <h2>You can even shout this way</h2>
-    </div></section>
-    <section class="slide"><div>
-        <h2>Inner Navigation</h2>
-        <ol>
-            <li>Lets you reveal list items one by one</li>
-            <li class="next">To keep some key points</li>
-            <li class="next">In secret from audience</li>
-            <li class="next">But it will work only once</li>
-            <li class="next">Nobody wants to see the same joke twice</li>
-        </ol>
-    </div></section>
-    <section class="slide shout" id="SeeMore"><div>
-        <h2><img src="pictures/logo.svg" alt=""> <a href="https://github.com/shower/shower">See more on GitHub</a></h2>
+    <section class="slide shout" id="See-more"><div>
+        <h2><a href="https://github.com/azproduction/node-mc">See more on GitHub</a></h2>
         <style>
-            #Picture h2 {
-                color:#FFF;
-                }
-            #SeeMore h2 {
+            #See-more h2 {
                 font-size:100px
-                }
-            #SeeMore img {
-                width:0.72em;
-                height:0.72em;
-                }
+            }
         </style>
     </div></section>
     <p class="badge"><a href="https://github.com/azproduction/talk-back-to-text-ui">Fork me on Github</a></p>
