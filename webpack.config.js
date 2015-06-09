@@ -9,7 +9,8 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.css$/, loader: 'style-loader!css-loader'},
+            {test: /\.css$/, loader: 'style-loader!css-loader!autoprefixer-loader'},
+            {test: /\.styl$/, loader: 'style-loader!css-loader!autoprefixer-loader!stylus-loader'},
             {test: /\.(jpg|png|svg|woff)$/, loader: 'file-loader'}
         ]
     },

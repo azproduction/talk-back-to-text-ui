@@ -1,5 +1,4 @@
-require('./index.css');
-require('highlight.js/styles/idea.css');
+require('./index.styl');
 
 var highlight = require('highlight.js/lib/highlight');
 highlight.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
