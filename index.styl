@@ -38,6 +38,12 @@ boxed-title() {
         color: #999;
     }
 
+    &.shout {
+        h2.small {
+            font-size: 110px;
+        }
+    }
+
     .pre-text {
         white-space: pre;
         line-height: 1;
@@ -61,6 +67,13 @@ boxed-title() {
 
     img {
         width: 100%;
+    }
+
+    mark {
+        &.important {
+            background: #E45454;
+            color: #fff;
+        }
     }
 }
 
@@ -684,32 +697,10 @@ boxed-title() {
     text-align: center;
 }
 
-#React-BatchingStrategy {
+#ReactReconcileTransaction-Final-Step {
     code {
-        line-height: 1.6;
-    }
-
-    pre {
-        margin: 0;
-    }
-
-    &.slide pre code:only-child:before {
-        content: counter(code,decimal-leading-zero)'.';
-    }
-
-    .second {
-        counter-reset: code 1;
-    }
-}
-
-#React-BatchingStrategy-2 {
-    code {
-        line-height: 1.6;
-        font-size: 28px;
-    }
-
-    pre {
-        margin: 0;
+        font-size: 25px;
+        line-height 1.6;
     }
 }
 

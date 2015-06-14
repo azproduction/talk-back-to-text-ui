@@ -495,55 +495,101 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
     <section class="slide" id="Repainting"><div>
         <h2>Repainting</h2>
         <ol>
-            <li><code>requestAnimationFrame()</code>
+            <li><code>addEventListener('<mark>Moz</mark>AfterPaint')</code></li>
+            <li class="next"><code>requestAnimationFrame()</code>
                 <ul>
                     <li>CPU burning</li>
                 </ul>
             </li>
-            <li class="next">Modify React <code>BatchingStrategy</code>
+            <li class="next"><code>new MutationObserver()</code>
                 <ul>
-                    <li>Precise repaints</li>
-                    <li>Requres <code>onWheel</code> event hack</li>
+                    <li><mark>Only DOM changes</mark></li>
                 </ul>
             </li>
         </ol>
     </div></section>
 
 
-    <section class="slide" id="React-BatchingStrategy"><div>
-        <h2>React BatchingStrategy</h2>
+    <section class="slide shout" id="ReactMutationObserver"><div>
+        <h2 class="small">componentDidUpdate event bubbling?</h2>
+    </div></section>
+
+
+    <section class="slide shout" id="No-ReactMutationObserver"><div>
+        <h2>No such thing!</h2>
+    </div></section>
+
+
+    <section class="slide" id="ReactReconcileTransaction-in-a-nutshell"><div>
+        <h2>ReactReconcileTransaction in a nutshell</h2>
+        <ul>
+            <li>Restores Selection after updates</li>
+            <li>Suppresses DOM events during updates</li>
+            <li>Source of <code>componentDidUpdate</code></li>
+        </ul>
+    </div></section>
+
+
+    <section class="slide" id="ReactReconcileTransaction"><div>
+        <h2>ON_DOM_READY_QUEUEING Transaction</h2>
         <pre class="javascript">
-            <code>import ReactUpdates from 'react/lib/ReactUpdates';</code>
-        </pre>
-        <pre class="javascript next second">
-            <code>let hasDomChanges = false;</code>
-            <code>ReactUpdates.injection.injectBatchingStrategy({</code>
-            <code>    isBatchingUpdates: true,</code>
-            <code>    batchedUpdates: (callback, ...args) => {</code>
-            <code>        hasDomChanges = <mark>true</mark>;</code>
-            <code>        callback(...args);</code>
-            <code>    }</code>
-            <code>});</code>
+            <code>// A queue for collecting `componentDidMount` and</code>
+            <code>// `componentDidUpdate` callbacks during transaction</code>
+            <code>var <mark>ON_DOM_READY_QUEUEING</mark> = {</code>
+            <code>  close: function() {</code>
+            <code>    this.reactMountReady.<mark>notifyAll</mark>();</code>
+            <code>  } // ...</code>
+            <code>};</code>
         </pre>
     </div></section>
 
 
-    <section class="slide" id="React-BatchingStrategy-2"><div>
-        <h2>React BatchingStrategy</h2>
+    <section class="slide" id="ReactReconcileTransaction-CallbackQueue"><div>
+        <h2>Hacking CallbackQueue</h2>
         <pre class="javascript">
-            <code>requestAnimationFrame(function tryRepaint() {</code>
-            <code>    ReactUpdates.<mark>flushBatchedUpdates();</mark></code>
-            <code>    if (hasDomChanges) {</code>
-            <code>        repaint();</code>
-            <code>    }</code>
-            <code>    requestAnimationFrame(tryRepaint);</code>
-            <code>});</code>
+            <code>class MyCQ extends CallbackQueue {</code>
+            <code>  notifyAll() {</code>
+            <code>    super.notifyAll();</code>
+            <code>    <mark>console.log('update')</mark>;</code>
+            <code>  }</code>
+            <code>}</code>
+            <code>PooledClass.addPoolingTo(MyCQ);</code>
         </pre>
+    </div></section>
+
+
+    <section class="slide" id="ReactReconcileTransaction-Final-Step"><div>
+        <h2>Hacking ReactReconcileTransaction</h2>
+        <pre class="javascript">
+            <code>class MyRRT extends ReactReconcileTransaction {</code>
+            <code>  constructor() {</code>
+            <code>    super();</code>
+            <code>    this.reactMountReady = <mark>MyCQ</mark>.getPooled(null);</code>
+            <code>  }</code>
+            <code>}</code>
+            <code>PooledClass.addPoolingTo(MyRRT);</code>
+            <code>ReactUpdates.injection</code>
+            <code>           <mark>.injectReconcileTransaction</mark>(MyRRT);</code>
+        </pre>
+    </div></section>
+
+
+    <section class="slide" id="Repainting-with-react"><div>
+        <h2>Hacking ReactReconcileTransaction</h2>
+        <ol>
+            <li>Global React Tree changes
+                <ul>
+                    <li>Close enough to AfterPaint</li>
+                </ul>
+            </li>
+            <li>Requires <code>onWheel</code> event hack</li>
+            <li>Doesn't help with stylesheet injections</li>
+        </ol>
     </div></section>
 
 
     <section class="slide" id="All-in-all"><div>
-        <h2>Full Application Cycle</h2>
+        <h2>Full Text UI Application Cycle</h2>
         <ol>
             <li>Measure <code>DOM</code> & generate Text UI</li>
             <li class="next">Render Text UI to <code>STDOUT</code></li>
@@ -557,16 +603,12 @@ _|_________________|_______[_]_[_]_[_]____/__][__\__
     <section class="slide" id="Back-to-Text-UI"><div>
         <h2>Back to Text UI</h2>
         <ol>
-            <li>Developers <span class="heart"><3</span> Terminal</li>
-            <li class="next">Toolchain is not limited</li>
+            <li>It's <b>easy</b> to extend React unsing injections</li>
+            <li class="next">Developers <span class="heart"><3</span> Terminal</li>
+            <li class="next">Text UI toolchain is not limited</li>
             <li class="next">Use Web Tools to render <code>TUI</code></li>
             <li class="next">Declarative <code>TUI</code> with React!</li>
         </ol>
-    </div></section>
-
-
-    <section class="slide shout"><div>
-        <h2>Show time!</h2>
     </div></section>
 
 
