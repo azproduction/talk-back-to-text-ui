@@ -39,6 +39,6 @@
     "webpack-dev-server": "^1.9.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --hot --inline"
+    "start": "webpack-dev-server --hot --inline & sleep 1.5 && open -a 'Google Chrome' http://localhost:8080/ & wait"
   }
 }
