@@ -1,9 +1,11 @@
+var path = require('path');
+
 module.exports = {
     entry: {
         index: './index.js'
     },
     output: {
-        path: __dirname,
+        path: path.join(__dirname, 'assets'),
         publicPath: '/assets/',
         filename: '[name].js'
     },
